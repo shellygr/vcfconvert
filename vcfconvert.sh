@@ -103,10 +103,10 @@ if ($conv->fromFile($file))
 		else if ($format == 'csv')
 		{
 			$delimiter = $opt['d'] ? ($opt['d']=='\t' || $opt['d']=='tab' ? "\t" : $opt['d']) : ";";
-			$out = $conv->toCSV($delimiter, isset($opt['h']), isset($opt['i']) ? 'ISO-8859-1' : null);
+			$out = $conv->toCSV($delimiter, isset($opt['h']), isset($opt['i']) ? 'windows-1255' : null);
 			
 			if (isset($opt['v']) && isset($opt['i']))
-				echo "Converting output to ISO-8859-1\n";
+				echo "Converting output to windows-1255\n";
 		}
 		else
 			die("Unknown output format\n");
